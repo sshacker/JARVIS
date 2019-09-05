@@ -3,22 +3,27 @@ from jarvis_functions import speaker
 
 #A FUNCTION TO WISH THE USER ON START
 def wish_me(user):
+    #TIME IN HOUR 
     hour = int(datetime.datetime.now().hour)
+
     print("\nJARVIS :- ")
     response = "WELCOME : " + user.upper() 
     print(response)
     speaker.speak(response)
-
+    
+    #FOR GOOD MORNING
     if hour>=0 and hour<12:
         response = "good morning !"
         print(response)
         speaker.speak(response)
 
+    #FOR GOOD AFTER-NOON
     elif hour>=12 and hour<18:
         response = "good afternoon !"
         print(response)
         speaker.speak(response)
     
+    #FOR GOOD EVENING
     else:
         response = "good evening !"
         print(response)
