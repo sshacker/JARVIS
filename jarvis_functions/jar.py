@@ -1,0 +1,25 @@
+from jarvis_functions import youtube, program, search
+
+### A FUNCTION FOR JARVIS RESPONSE 
+### TAKE ONE INPUT QUERY AND RETURN NOTHING
+def jarvis_reply(query) :
+	"""
+		TAKE A QUERY AND TO PERFORM A TASK ACCORDING TO QUERY
+	"""
+
+	#TASK TO YOUTUBE SEARCH
+	if "YOUTUBE" in query:
+		return youtube.youtube(query)
+		
+	#TASK TO OPEN PROGRAM 
+	elif "OPEN" in query:
+		return program.program(query)
+	
+	#TASK TO GOOGLE SEARCH 
+	elif "SEARCH" in query:
+		return search.search(query)
+		
+	#DO SOMETHINGS FOR OTHER TASKS
+	#...
+	
+	return

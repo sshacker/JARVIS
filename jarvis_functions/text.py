@@ -1,8 +1,5 @@
-#FOR CONVERTING THE TEXT-TO-SPEECH
 from jarvis_functions import speaker
-
-#FOR TO ACCESS DECLARED VARIABLES
-from jarvis_variables import variables
+import variables
 
 ### FOR TAKE INPUT QUERY IN TEXT AND RETURN QUERY
 ### [ TAKE TEXT INPUT FROM USER AND RETURN INPUT AS QUERY ]
@@ -19,9 +16,10 @@ def take_text_command():
 
     #TO TAKE INPUT IN QUERY
     query = input("YOU : ")
-
+    query = query.upper()
+    
     #TO CHECK IF TERMINATE COMMAND FOR PROGRAM
-    if query.upper().replace(" ","") in variables.terminate :
+    if query.replace(" ","") in variables.terminate :
         response = "HAVE A NICE DAY SIR ! BYE !!"
         print(response)
         speaker.speak(response)

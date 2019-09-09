@@ -3,10 +3,11 @@ import pyttsx3
 
 #FOR ONLINE TEXT-TO-SPEECH
 from gtts import gTTS
+
+import variables
 import os
 
-from jarvis_functions import speaker
-from jarvis_variables import variables
+
 
 #PYTTSX3 INITIALIZATIONS
 engine = pyttsx3.init("sapi5")
@@ -44,4 +45,5 @@ def speak(jarvis_speech):
     #IF ONLINE
     else:
         online_gtts_speak(jarvis_speech)
+        
     return

@@ -1,2 +1,19 @@
-# JARVIS
-#welocome to the world of jarvis - a personal voice assistant
+####################   JARVIS  ############################
+welocome to the world of jarvis - a personal voice assistant
+########################################################
+
+
+#JARVIS_VARIABLES
+#VARIABLES : FOR TO ACCESS DECLARED VARIABLES
+
+
+#JARVIS_FUNCTIONS
+#BOT : FOR CHAT BAT REPLY FROM FROM AIML FILES
+#BRAIN : FOR KERNEL BRAIN-FILE USING AIML FILES
+#JAR : FOR JARVIS REPLY 
+#KEY: TO CAPTURE KEYBOARD AND PRESS KEYS FOR A QUERY
+#PROGRAM: TO OPEN A PROGRAM
+#SPEAKER : FOR CONVERTING THE TEXT-TO-SPEECH
+#TEXT : FOR TAKE INPUT QUERY IN TEXT AND RETURN QUERY
+#VOICE: TO TAKE VOICE INPUT AND RETURN A TEXT  QUERY
+#WISH : FOR INITIALLY WISH TO THE USER

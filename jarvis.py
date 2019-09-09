@@ -1,51 +1,92 @@
-#VARIABLES : FOR TO ACCESS DECLARED VARIABLES
-#BOT : FOR CHAT BAT REPLY FROM FROM AIML FILES
-#BRAIN : FOR KERNEL BRAIN-FILE USING AIML FILES
-#SPEAKER : FOR CONVERTING THE TEXT-TO-SPEECH
-#TEXT : FOR TAKE INPUT QUERY IN TEXT AND RETURN QUERY
-#WISH :FOR INITIALLY WISH TO THE USER
+from chatbot_functions import *
+from jarvis_functions import *
+import time
 
-from jarvis_variables import variables
-
-from jarvis_functions import bot
-from jarvis_functions import brain
-from jarvis_functions import speaker
-from jarvis_functions import text
-from jarvis_functions import wish
-
-
-##################################################
+####################################################
 ### MAIN START POINT OF THE SOFTWARE (PROGRAM) ###
-##################################################
+####################################################
 
-if __name__ == "__main__" :
-    #START RUNNING
-    query = "\n:: WAIT WHILE LOADING REQUIRED FILES ::\n"
+def main() :
+    #TO GET USER NAME
+    query = "PLEASE ENTER YOUR NAME : "
     print(query)
     speaker.speak(query)
-
-    #BRAIN FILE
-    kernel = brain.chat_bot_brain()
-
-    #TO GET USER NAME
-    query = "Please enter your name : "
-    speaker.speak(query)
-    user = input(query)
+    user = input()
     
-    #ON START WISH TO USER
-    wish.wish_me(user)
+    #WELCOME TO USER
+    response="WELCOME "+user.upper()
+    print(response)
+    speaker.speak(response)
+    
+    #SELECT ASSISTANCE TYPE 
+    info = "PLEASE SELECT YOUR ASSISTANT TYPE"
+    print(info)
+    print("1. CHAT BOT")
+    print("2. JARVIS")
+    speaker.speak(info)
+    i = int(input("enter : "))
 
-    #NOW READY TO TAKE A COMMMAN FROM USER
-    print("\n:: Now J.A.R.V.I.S Ready ::\n")
-    command_type = input("Command Type [ text OR voice ] : ")
-    print(command_type)
+    #########################################
+    ###   FOR CHAT BOT
+    ##########################################
+    if i==1:
+        info = "WAIT WHILE LOADING REQUIRED FILES"
+        print("\n:: "+info+" ::\n")
+        speaker.speak(info)
+        
+        #BRAIN FILE
+        kernel = brain.chat_bot_brain()
 
-    #COMMAND TYPE CHECKING IF TEXT OR VOICE TYPE
-    if command_type.lower() == "text":
+        #NOW READY TO TAKE A COMMMAN FROM USER
+        info="Now CHAT BOT Ready"
+        print("\n:: "+info+" ::\n")
+        speaker.speak(info)
+        info="Hello sir how i can help you?"
+        print("CHAT BOT :\nHello sir how i can help you?")
+        speaker.speak(info)
+
         #FOR TEXT COMMAND
         while True:
             #TO TAKE THE INPUT FOR QUERY IN TEXT FORM
-            query = text.take_text_command()
+            query = chat.take_text_command()
             
             #TO REPLY THE QUERY FROM CHAT-BOT
             bot.chat_bot_reply(query, kernel)
+
+    #########################################
+    ###   FOR JARVIS
+    #########################################
+    else:
+        #ON START WISH TO USER
+        wish.wish_me(user)
+        
+        #TAKE COMMAND TYPE
+        info="SELECT COMMAND TYPE"
+        print(info)
+        speaker.speak(info)
+        print("1. TEXT")
+        print("2. VOICE")
+        time.sleep(1)
+        i = int(input("enter : "))
+
+        #COMMAND TYPE IF TEXT
+        if i == 1:
+            while True:
+                #TO TAKE THE INPUT FOR QUERY IN TEXT FORM
+                query = text.take_text_command()
+
+                #TO REPLY THE QUERY FROM JARVIS
+                jar.jarvis_reply(query)
+
+        #COMMAND TYPE IF VOICE
+        else :
+            while True:
+                #TO TAKE THE INPUT FOR QUERY IN TEXT FORM
+                query = voice.take_voice_command()
+
+                #TO REPLY THE QUERY FROM JARVIS
+                jar.jarvis_reply(query)
+    return 0
+
+if __name__ == "__main__":
+        main()

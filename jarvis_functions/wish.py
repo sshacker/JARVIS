@@ -7,9 +7,6 @@ def wish_me(user):
     hour = int(datetime.datetime.now().hour)
 
     print("\nJARVIS :- ")
-    response = "WELCOME : " + user.upper() 
-    print(response)
-    speaker.speak(response)
     
     #FOR GOOD MORNING
     if hour>=0 and hour<12:
@@ -29,7 +26,7 @@ def wish_me(user):
         print(response)
         speaker.speak(response)
     
-    response = "I am JARVIS sir. How may I help you ?"
+    response = "I am JARVIS sir. How may I help you?"
     print(response)
     speaker.speak(response)
     return
