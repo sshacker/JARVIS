@@ -1,5 +1,7 @@
 from chatbot_functions import *
+from chatterbot_functions import *
 from jarvis_functions import *
+
 import time
 
 ####################################################
@@ -22,7 +24,8 @@ def main() :
     info = "PLEASE SELECT YOUR ASSISTANT TYPE"
     print(info)
     print("1. CHAT BOT")
-    print("2. JARVIS")
+    print("2. CHATTER BOT")
+    print("3. JARVIS")
     speaker.speak(info)
     i = int(input("enter : "))
 
@@ -52,7 +55,18 @@ def main() :
             
             #TO REPLY THE QUERY FROM CHAT-BOT
             bot.chat_bot_reply(query, kernel)
+    
+    #########################################
+    ###   FOR CHATTER BOT
+    ##########################################
+    elif i==2:
+        #NOW READY TO TAKE A COMMMAN FROM USER
+        info="Now CHATTER BOT Ready"
+        print("\n:: "+info+" ::\n")
+        speaker.speak(info)
 
+        my_chatterbot.my_chatterbot()
+        
     #########################################
     ###   FOR JARVIS
     #########################################
@@ -86,7 +100,9 @@ def main() :
 
                 #TO REPLY THE QUERY FROM JARVIS
                 jar.jarvis_reply(query)
+    
     return 0
 
+#MAIN FUNCTION CALLING
 if __name__ == "__main__":
         main()

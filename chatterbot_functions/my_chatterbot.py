@@ -1,16 +1,16 @@
-from chat_bot import chat_bot
-from training_corpus import training_corpus
-from training_list import training_list
+from chatterbot_functions import chat_bot
+from chatterbot_functions import training_corpus
+from chatterbot_functions import training_list
 
 def my_chatterbot():        
     #CREATE A NEW INSTANCE OF A CHATBOT
-    chatbot = chat_bot()
+    chatbot = chat_bot.chat_bot()
 
     #TRAINING CHATBOT USING CHATTERBOT CORPUS ENGLISH DATA
-    training_corpus(chatbot)
+    training_corpus.training_corpus(chatbot)
 
     #TRAINING CHATBOT USING  OWN LIST DATA 
-    training_list(chatbot)
+    training_list.training_list(chatbot)
 
     print('Type something to begin...')
 
@@ -24,3 +24,5 @@ def my_chatterbot():
         #PRESS CTRL-C OR CTRL-D ON THE KEYBOARD TO EXIT
         except (KeyboardInterrupt, EOFError, SystemExit):
             break
+    
+    return 
