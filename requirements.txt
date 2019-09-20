@@ -1,0 +1,6 @@
+aiml
+gtts
+pyttsx3
+chatterbot-corpus
+chatterbot
+pyautogui

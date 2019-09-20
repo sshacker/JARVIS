@@ -11,13 +11,13 @@ def chat_bot_brain() :
         kernel = aiml.Kernel()
 
         #FOR READ BOT-BRAIN-FILE
-        if os.path.isfile("bot_brain.brn"):
-                kernel.bootstrap(brainFile = "bot_brain.brn")
+        if os.path.isfile("chatbot_functions/bot_brain.brn"):
+                kernel.bootstrap(brainFile = "chatbot_functions\\bot_brain.brn")
         
         #FOR CREATING BOT-BRAIN-FILE
         else:
                 kernel.bootstrap(learnFiles = "chatbot_functions\std-startup.xml", commands = "LOAD AIML B")
-                kernel.saveBrain("bot_brain.brn")
+                kernel.saveBrain("chatbot_functions\\bot_brain.brn")
         
         #RETURN KERNEL INSTANCE
         return kernel
