@@ -5,13 +5,16 @@ def chat_bot():
 	chatbot = ChatBot(
 	    'hacker',
 	    read_only=False,
+        
 	    storage_adapter='chatterbot.storage.SQLStorageAdapter',
+        
 	    logic_adapters=[
 		'chatterbot.logic.MathematicalEvaluation',
 		#'chatterbot.logic.TimeLogicAdapter',
 		'chatterbot.logic.BestMatch'
 	    ],
-	    database_uri='sqlite:///database.db'
+        
+	    database_uri='sqlite:///chatterbot_functions//database.db'
 	)
 	
 	return chatbot
