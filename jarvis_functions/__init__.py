@@ -2,10 +2,11 @@ __all__ = [
     "jar",
     "key",
     "program",
-    "search",
+    "google",
     "speaker",
     "text",
     "voice",
     "wish",
+    "facebook",
     "youtube",
 ]
